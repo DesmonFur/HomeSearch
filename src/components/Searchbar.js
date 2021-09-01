@@ -1,27 +1,47 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import HomesList from "./HomesList";
-function Searchbar() {
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
- const [search, setSearch] = useState("Search here");
- const [homes, setHomes] = useState([])
+const Searchbar = () => {
 
- function handleChange(e) {
+    const [search, setSearch] = useState("");
+    const [homes, setHomes] = useState([]);
+
+    const handleChange = e => {
         setSearch(e.target.value);
     }
 
-function searchHomes (){
-    axios.get(`/api/home/address?address=${search}`).then(res => {
-        setHomes(res.data)
-    });
-}
+    const searchHomes = () => {
+        axios.get(`/api/home/address?address=${search}`).then(res => {
+            setHomes(res.data)
+        });
+    }
+
+    useEffect(() => {
+        axios.get(`/api/home/address?address=${search}`).then(res => {
+            setHomes(res.data)
+        });
+    }, [search])
+
 
     return (
-        <div>
-            <p>Search Query:</p>
-            <input type="Name: " id="name" onChange={handleChange}/>
-            <button onClick={searchHomes}>Search</button>
-            <HomesList homes={homes} />
+        <div className="search-homes-content">
+            <div className="wrap">
+                <h1>Home Address Lookup</h1>
+                <div>
+                    <form action="#" onSubmit={searchHomes} className="search">
+                        <input type="Search: " id="search" className="search-term" onChange={handleChange}/>
+                        <button type="submit" className="search-button" onClick={searchHomes}><FontAwesomeIcon
+                            icon={faSearch}></FontAwesomeIcon>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <HomesList homes={homes}/>
+            </div>
         </div>
     );
 }
