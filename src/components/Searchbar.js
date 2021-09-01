@@ -7,6 +7,7 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons'
 const Searchbar = () => {
 
     const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(true);
     const [homes, setHomes] = useState([]);
 
     const handleChange = e => {
@@ -22,6 +23,7 @@ const Searchbar = () => {
     useEffect(() => {
         axios.get(`/api/home/address?address=${search}`).then(res => {
             setHomes(res.data)
+            setLoading(false)
         });
     }, [search])
 
@@ -40,7 +42,7 @@ const Searchbar = () => {
                 </div>
             </div>
             <div>
-                <HomesList homes={homes}/>
+                <HomesList homes={homes} loading={loading}/>
             </div>
         </div>
     );
