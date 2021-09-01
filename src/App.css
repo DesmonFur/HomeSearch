@@ -1,38 +1,111 @@
+body {
+    background: #0C0C0C;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-homes-content {
+    display: flex;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrap {
+    width: 30%;
+    position: relative;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.search-term {
+    width: 100%;
+    border: 3px solid #177FFF;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #177FFF;
+    font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-button {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #177FFF;
+    background: #177FFF;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+ul {
+    text-align: left;
+    margin: 5% 0 0;
+    padding: 10px;
+    list-style: none;
+    line-height: 2rem;
+}
+
+li {
+    margin: 0 0 0 5%;
+    padding: 0;
+    font-weight: bold
+
+}
+
+span {
+    font-weight: bolder;
+    color: #ffff00;
+}
+
+
+.no-matching-homes-text {
+    position: relative;
+    top: 10vh;
+}
+
+.home-tile {
+    position: relative;
+    top: 10vh;
+    margin: 100px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background: radial-gradient(
+            circle 346px at 0.3% 100%,
+            #56CCF2 10%,
+            #177FFF 100.7%
+    );
+    text-align: center;
+    box-shadow: 3px 2px 5px 0px #56CCF2;
+}
+
+.home-tile-list :hover {
+    transform: scale(1.02);
+}
+
+.loading-text {
+    color: #fff;
+    position: relative;
+    top: 10vh;
+    text-shadow: 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #56CCF2,
+    0 0 82px #56CCF2,
+    0 0 92px #56CCF2,
+    0 0 102px #56CCF2,
+    0 0 151px #56CCF2;
 }
