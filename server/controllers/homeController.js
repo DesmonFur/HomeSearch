@@ -4,7 +4,6 @@ module.exports = {
     getByAddress(req, res) {
         const {address} = req.query
         const filteredHomes = homes.filter(home => home.ADDRESS.toLowerCase().includes(address.toLowerCase()))
-        console.log(filteredHomes)
         const resultArray = filteredHomes.map(home => ({
             City: home.CITY,
             State: home['STATE OR PROVINCE'],
