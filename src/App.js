@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Searchbar from './components/Searchbar.js'
 
 function App() {
     return (
         <div className="App">
-            <h1> Full stack challenge</h1>
+        <Searchbar />
         </div>
     );
 }
