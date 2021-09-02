@@ -54,9 +54,9 @@ To run this project, you will need to add the following environment variables to
   
 ## Screenshots
   
-![image](./appscreenshots/Home_Address_Lookup_Screenshot1.png)
+![image](./appscreenshots/Home_Address_Lookup_Screenshot1.PNG)
 
-![image](./appscreenshots/Home_Address_Lookup_Screenshot2.png)
+![image](./appscreenshots/Home_Address_Lookup_Screenshot2.PNG)
 
 
   
